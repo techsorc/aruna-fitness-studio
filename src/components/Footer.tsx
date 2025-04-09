@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Instagram } from "lucide-react";
 
@@ -8,6 +7,7 @@ const Footer = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
+    { name: "Gallery", path: "/gallery" },
     { name: "Testimonials", path: "/testimonials" },
     { name: "About Us", path: "/about" },
     { name: "Contact Us", path: "/contact" },

@@ -10,6 +10,7 @@ import Services from "./pages/Services";
 import Testimonials from "./pages/Testimonials";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
 
@@ -34,28 +35,27 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Layout><Index /></Layout>} />
-          <Route path="/services" element={<Layout><Services /></Layout>} />
-          <Route path="/testimonials" element={<Layout><Testimonials /></Layout>} />
-          <Route path="/about" element={<Layout><About /></Layout>} />
-          <Route path="/contact" element={<Layout><Contact /></Layout>} />
-          <Route path="/privacy" element={
-            <Layout>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Index />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/privacy" element={
               <div className="container-custom py-16">
                 <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
                 <p className="text-gray-600 mb-4">Coming soon.</p>
               </div>
-            </Layout>
-          } />
-          <Route path="/terms" element={
-            <Layout>
+            } />
+            <Route path="/terms" element={
               <div className="container-custom py-16">
                 <h1 className="text-3xl font-bold mb-6">Terms of Service</h1>
                 <p className="text-gray-600 mb-4">Coming soon.</p>
               </div>
-            </Layout>
-          } />
-          <Route path="*" element={<Layout><NotFound /></Layout>} />
+            } />
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
