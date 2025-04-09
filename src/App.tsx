@@ -21,11 +21,11 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/" element={<Layout><Index /></Layout>} />
+          <Route path="/services" element={<Layout><Services /></Layout>} />
+          <Route path="/testimonials" element={<Layout><Testimonials /></Layout>} />
+          <Route path="/about" element={<Layout><About /></Layout>} />
+          <Route path="/contact" element={<Layout><Contact /></Layout>} />
           <Route path="/privacy" element={
             <Layout>
               <div className="container-custom py-16">
@@ -42,7 +42,7 @@ const App = () => (
               </div>
             </Layout>
           } />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<Layout><NotFound /></Layout>} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
